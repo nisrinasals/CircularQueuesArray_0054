@@ -67,3 +67,37 @@ public:
         int REAR_position = REAR;
 
 
+        //cek apakah antrian kosong
+        if(FRONT == -1) {
+            cout << "Queue is empty\n";
+            return;
+        }
+
+        cout << "\nElements in queues are...\n";
+
+        //jika FRONT-position <= REAR_position, iterasi dari FRONT hingga REAR
+        if (FRONT_position <= REAR_position) {
+            while (FRONT_position <= REAR_position) {
+                cout << queue_array[FRONT_position] << "   ";
+                FRONT_position++;
+            }
+            cout << endl;
+        }
+    }
+};
+
+int main() {
+    Queues q;
+    char ch;
+
+    while (true) {
+        try {
+            cout << "menu" << endl;
+            cout << "1. Implement insert operation" <<  endl;
+            cout << "2. Implement delete operation" << endl;
+            cout << "3. Display values" << endl;
+            cout << "4. Exit" << endl;
+            cout << "Enter your choice (1-4): ";
+            cin >> ch;
+            cout << endl;
+
